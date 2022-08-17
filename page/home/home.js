@@ -1,14 +1,21 @@
 import * as React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Header, Icon} from '@rneui/themed';
-function MineScreen({navigation}) {
+function HomeScreen({navigation}) {
   return (
     <Header
-      centerComponent={{text: '我的', style: styles.heading}}
+      leftComponent={
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => {}}>
+            <Icon name="location" color="white" type="evilicon" size={32} />
+          </TouchableOpacity>
+        </View>
+      }
+      centerComponent={{text: '首页', style: styles.heading}}
       rightComponent={
         <View style={styles.header}>
           <TouchableOpacity onPress={() => {}}>
-            <Icon name="settings" color="white" />
+            <Icon name="message" color="white" />
           </TouchableOpacity>
         </View>
       }
@@ -33,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MineScreen;
+export default HomeScreen;

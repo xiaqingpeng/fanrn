@@ -1,44 +1,21 @@
-import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Button} from '@rneui/themed';
-const HomeStack = createNativeStackNavigator();
 
-function HomeStackScreen(navigate) {
-  console.log(navigate);
+import HomeScreen from './home';
+import DetailsScreen from './details';
+
+const IndexStack = createNativeStackNavigator();
+function IndexStackScreen() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Details" component={DetailsScreen} />
-    </HomeStack.Navigator>
-  );
-}
-function HomeScreen({navigation}) {
-  return (
-    <View style={styles.container}>
-      <Text>Home screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+    <IndexStack.Navigator>
+      <IndexStack.Screen
+        name="Home"
+        options={{headerShown: false}}
+        component={HomeScreen}
       />
-    </View>
+      <IndexStack.Screen name="Details" component={DetailsScreen} />
+    </IndexStack.Navigator>
   );
 }
 
-function DetailsScreen(navigate) {
-  console.log(navigate);
-  return (
-    <View style={styles.container}>
-      <Text>Details!</Text>
-    </View>
-  );
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default HomeStackScreen;
+export default IndexStackScreen;
