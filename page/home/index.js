@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {Button, Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Button} from '@rneui/themed';
 const HomeStack = createNativeStackNavigator();
 
 function HomeStackScreen(navigate) {
